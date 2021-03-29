@@ -20,16 +20,16 @@ Code in the ``else`` block is only run if no errors are thrown by the code in th
 ```python
 # (`try` and `except` block above)
 else:
-        # this only runs if the try didn't raise any exceptions
-        # put data from file into a list
-        orders = file.readlines()
-            
-        for i in range(len(orders)):
-            orders[i] = orders[i].replace("\n", "") # remove the newline character
+    # this only runs if the try didn't raise any exceptions
+    # put data from file into a list
+    orders = file.readlines()
+        
+    for i in range(len(orders)):
+        orders[i] = orders[i].replace("\n", "") # remove the newline character
 
-        print(orders) # print the orders
+    print(orders) # print the orders
 
-    finally:
-        # always executes, regardless of errors
-        print("I always run!")
+finally:
+    # always executes, regardless of errors
+    print("I always run!")
 ```
