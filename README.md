@@ -7,12 +7,18 @@ In Python, the way to handle errors works a lot like an ``if``/``else`` statemen
 
 Below is an example of trying to open a file. If ``orders.txt`` doesn't exist, the file in the ``except`` block is run. This is much more useful to the average user than a ``FileNotFoundError``.
 ```python
-try:
-    # built in method for opening files - open("filename")
-    file = open("orders.txt")
-    print("File opened!")
-except:
-    # this is run when the code in the try block raises an exception
-    print("Couldn't find the file. Make sure your file exists...")
+# (`try` and `except` block above)
+else:
+        # this only runs if the try didn't raise any exceptions
+        # put data from file into a list
+        orders = file.readlines()
+            
+        for i in range(len(orders)):
+            orders[i] = orders[i].replace("\n", "") # remove the newline character
+
+        print(orders) # print the orders
+
+    finally:
+        # always executes, regardless of errors
+        print("I always run!")
 ```
-Code in the ``finally`` block is ***always*** run.
